@@ -1,24 +1,49 @@
 # FileCache
 
-TODO: Write a gem description
+Very simple and naive file cache. Does not require any environment setting.
+
+Interface similar to memcache, redis. You can be a stepping stone of transition to these cache.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'fileCache'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install fileCache
 
 ## Usage
+Initialize with cache path.
 
-TODO: Write usage instructions here
+You can also specify path by `ENV`.
+
+Default path is `/tmp`.
+
+```ruby
+require 'fileCache'
+
+cache = FileCache.new("cache_dir")
+
+ENV['FILECACHE_PATH'] = cache_dir
+cache = FileCache.new
+
+# cache dir is tmp
+cache = FileCache.new
+```
+
+Methods are below.
+```ruby
+> cache.set('hoge', 'fuga')
+=> 4
+> cache.get('hoge')
+=> "fuga"
+> cache.set('hoge', 'foo')
+=> 3
+> cache.get('hoge')
+=> "foo"
+> cache.delete('hoge')
+=> 1
+> cache.has?('hoge')
+=> false
+> cache.flush
+=> 0
+```
 
 ## Contributing
 
