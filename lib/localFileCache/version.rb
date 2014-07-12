@@ -1,3 +1,3 @@
-class FileCache
+class LocalFileCache
   VERSION = "0.0.1"
 end

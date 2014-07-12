@@ -1,4 +1,4 @@
-# FileCache
+# localFileCache
 
 Very simple and naive file cache. Does not require any environment setting.
 
@@ -6,7 +6,7 @@ Interface similar to memcache, redis. You can be a stepping stone of transition 
 
 ## Installation
 
-    $ gem install fileCache
+    $ gem install localFileCache
 
 ## Usage
 Initialize with cache path.
@@ -16,15 +16,15 @@ You can also specify path by `ENV`.
 Default path is `/tmp`.
 
 ```ruby
-require 'fileCache'
+require 'localFileCache'
 
-cache = FileCache.new("cache_dir")
+cache = LocalFileCache.new("cache_dir")
 
 ENV['FILECACHE_PATH'] = cache_dir
-cache = FileCache.new
+cache = LocalFileCache.new
 
 # cache dir is tmp
-cache = FileCache.new
+cache = LocalFileCache.new
 ```
 
 Methods are below.

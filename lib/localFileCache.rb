@@ -1,6 +1,6 @@
-require "fileCache/version"
+require "localFileCache/version"
 
-class FileCache
+class LocalFileCache
   def initialize(path = '')
     if ! path.empty?
       @file_path = path

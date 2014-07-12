@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fileCache/version'
+require 'LocalFileCache/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fileCache"
-  spec.version       = FileCache::VERSION
+  spec.name          = "LocalFileCache"
+  spec.version       = LocalFileCache::VERSION
   spec.authors       = ["gong023"]
   spec.email         = ["gon.gong.gone@gmail.com"]
   spec.description   = %q{simple file cache}
