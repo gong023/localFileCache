@@ -29,9 +29,10 @@ class FileCache
   end
 
   def flush
-    Dir.entries(@file_path) do |item|
+    Dir.foreach(@file_path) do |item|
       next if item == '.' || item == '..'
       delete item
     end
+    Dir.rmdir(@file_path)
   end
 end
